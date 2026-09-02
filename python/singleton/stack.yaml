@@ -1,0 +1,18 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  notification-hub:
+    lang: python3-flask
+    handler: ./notification-hub
+    image: ttl.sh/openfaas-examples/python-notification-hub:latest
+    build_args:
+      TEST_ENABLED: "true"
+    labels:
+      com.openfaas.scale.min: "1"
+      com.openfaas.scale.max: "1"
+    environment:
+      exec_timeout: "1h"
+      read_timeout: "1h1s"
+      write_timeout: "1h1s"

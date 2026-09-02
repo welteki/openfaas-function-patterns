@@ -1,0 +1,37 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  telemetry-workflow:
+    lang: python3-http
+    handler: ./telemetry-workflow
+    image: ttl.sh/openfaas-examples/python-telemetry-workflow:latest
+    build_args:
+      TEST_ENABLED: "true"
+    environment:
+      stage_timeout: "5"
+      exec_timeout: 15s
+      read_timeout: 16s
+      write_timeout: 16s
+
+  validate-reading:
+    lang: python3-http
+    handler: ./validate-reading
+    image: ttl.sh/openfaas-examples/python-validate-reading:latest
+    build_args:
+      TEST_ENABLED: "true"
+
+  temperature-check:
+    lang: python3-http
+    handler: ./temperature-check
+    image: ttl.sh/openfaas-examples/python-temperature-check:latest
+    build_args:
+      TEST_ENABLED: "true"
+
+  battery-check:
+    lang: python3-http
+    handler: ./battery-check
+    image: ttl.sh/openfaas-examples/python-battery-check:latest
+    build_args:
+      TEST_ENABLED: "true"

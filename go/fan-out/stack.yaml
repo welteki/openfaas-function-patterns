@@ -1,0 +1,16 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  fan-out:
+    lang: golang-middleware
+    handler: ./fan-out
+    image: ttl.sh/openfaas-examples/fan-out:latest
+
+  url-check:
+    lang: golang-middleware
+    handler: ./url-check
+    image: ttl.sh/openfaas-examples/url-check:latest
+    environment:
+      request_timeout: 5s

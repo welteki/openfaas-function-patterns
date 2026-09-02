@@ -1,0 +1,29 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  telemetry-workflow:
+    lang: golang-middleware
+    handler: ./telemetry-workflow
+    image: ttl.sh/openfaas-examples/telemetry-workflow:latest
+    environment:
+      stage_timeout: 5s
+      exec_timeout: 15s
+      read_timeout: 16s
+      write_timeout: 16s
+
+  validate-reading:
+    lang: golang-middleware
+    handler: ./validate-reading
+    image: ttl.sh/openfaas-examples/validate-reading:latest
+
+  temperature-check:
+    lang: golang-middleware
+    handler: ./temperature-check
+    image: ttl.sh/openfaas-examples/temperature-check:latest
+
+  battery-check:
+    lang: golang-middleware
+    handler: ./battery-check
+    image: ttl.sh/openfaas-examples/battery-check:latest

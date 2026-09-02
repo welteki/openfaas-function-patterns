@@ -1,0 +1,10 @@
+template/
+build/
+context/
+.secrets/
+*.tar.gz
+__pycache__/
+.pytest_cache/
+.tox/
+*.py[cod]
+node_modules/

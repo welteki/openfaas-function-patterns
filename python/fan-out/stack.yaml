@@ -1,0 +1,20 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  fan-out:
+    lang: python3-http
+    handler: ./fan-out
+    image: ttl.sh/openfaas-examples/python-fan-out:latest
+    build_args:
+      TEST_ENABLED: "true"
+
+  url-check:
+    lang: python3-http
+    handler: ./url-check
+    image: ttl.sh/openfaas-examples/python-url-check:latest
+    build_args:
+      TEST_ENABLED: "true"
+    environment:
+      request_timeout: "5"

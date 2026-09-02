@@ -1,0 +1,29 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  telemetry-workflow:
+    lang: node24
+    handler: ./telemetry-workflow
+    image: ttl.sh/openfaas-examples/node-telemetry-workflow:latest
+    environment:
+      stage_timeout: "5"
+      exec_timeout: 15s
+      read_timeout: 16s
+      write_timeout: 16s
+
+  validate-reading:
+    lang: node24
+    handler: ./validate-reading
+    image: ttl.sh/openfaas-examples/node-validate-reading:latest
+
+  temperature-check:
+    lang: node24
+    handler: ./temperature-check
+    image: ttl.sh/openfaas-examples/node-temperature-check:latest
+
+  battery-check:
+    lang: node24
+    handler: ./battery-check
+    image: ttl.sh/openfaas-examples/node-battery-check:latest
