@@ -6,11 +6,11 @@ functions:
   fan-out:
     lang: node24
     handler: ./fan-out
-    image: ttl.sh/openfaas-examples/node-fan-out:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/node-fan-out:latest
 
   url-check:
     lang: node24
     handler: ./url-check
-    image: ttl.sh/openfaas-examples/node-url-check:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/node-url-check:latest
     environment:
       request_timeout: "5"

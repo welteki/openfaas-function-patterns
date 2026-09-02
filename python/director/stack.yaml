@@ -6,7 +6,7 @@ functions:
   telemetry-workflow:
     lang: python3-http
     handler: ./telemetry-workflow
-    image: ttl.sh/openfaas-examples/python-telemetry-workflow:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/python-telemetry-workflow:latest
     build_args:
       TEST_ENABLED: "true"
     environment:
@@ -18,20 +18,20 @@ functions:
   validate-reading:
     lang: python3-http
     handler: ./validate-reading
-    image: ttl.sh/openfaas-examples/python-validate-reading:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/python-validate-reading:latest
     build_args:
       TEST_ENABLED: "true"
 
   temperature-check:
     lang: python3-http
     handler: ./temperature-check
-    image: ttl.sh/openfaas-examples/python-temperature-check:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/python-temperature-check:latest
     build_args:
       TEST_ENABLED: "true"
 
   battery-check:
     lang: python3-http
     handler: ./battery-check
-    image: ttl.sh/openfaas-examples/python-battery-check:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/python-battery-check:latest
     build_args:
       TEST_ENABLED: "true"

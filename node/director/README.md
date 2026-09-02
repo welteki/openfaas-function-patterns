@@ -4,8 +4,7 @@ This is the Node.js implementation of the telemetry workflow documented in
 the OpenFaaS function patterns guide. It uses `node24` for all four functions
 and runs the temperature and battery checks concurrently.
 
-Documentation page: `docs/languages/patterns/director.md` in the
-openfaas-docs repository.
+Documentation: [Director pattern](https://docs.openfaas.com/languages/patterns/director/)
 
 ```bash
 faas-cli template store pull node24

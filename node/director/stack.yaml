@@ -6,7 +6,7 @@ functions:
   telemetry-workflow:
     lang: node24
     handler: ./telemetry-workflow
-    image: ttl.sh/openfaas-examples/node-telemetry-workflow:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/node-telemetry-workflow:latest
     environment:
       stage_timeout: "5"
       exec_timeout: 15s
@@ -16,14 +16,14 @@ functions:
   validate-reading:
     lang: node24
     handler: ./validate-reading
-    image: ttl.sh/openfaas-examples/node-validate-reading:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/node-validate-reading:latest
 
   temperature-check:
     lang: node24
     handler: ./temperature-check
-    image: ttl.sh/openfaas-examples/node-temperature-check:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/node-temperature-check:latest
 
   battery-check:
     lang: node24
     handler: ./battery-check
-    image: ttl.sh/openfaas-examples/node-battery-check:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/node-battery-check:latest

@@ -6,11 +6,11 @@ functions:
   fan-out:
     lang: golang-middleware
     handler: ./fan-out
-    image: ttl.sh/openfaas-examples/fan-out:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/fan-out:latest
 
   url-check:
     lang: golang-middleware
     handler: ./url-check
-    image: ttl.sh/openfaas-examples/url-check:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/url-check:latest
     environment:
       request_timeout: 5s

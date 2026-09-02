@@ -6,7 +6,7 @@ functions:
   notification-hub:
     lang: python3-flask
     handler: ./notification-hub
-    image: ttl.sh/openfaas-examples/python-notification-hub:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/python-notification-hub:latest
     build_args:
       TEST_ENABLED: "true"
     labels:

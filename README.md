@@ -1,16 +1,12 @@
-Worked examples for the OpenFaaS documentation. Each example is
+Examples for the OpenFaaS documentation. Each example is
 self-contained: it has its own `stack.yaml` and function directories, so it
 can be built and deployed on its own.
 
-## Structure
+## Examples
 
-```
-<language>/
-  <example>/
-    stack.yaml
-    <function>/
-      handler.go, handler.py, or handler.js
-```
+- [**Director**](https://docs.openfaas.com/languages/patterns/director/) — [Go](go/director/) · [Python](python/director/) · [Node.js](node/director/)
+- [**Fan-out**](https://docs.openfaas.com/languages/patterns/fan-out/) — [Go](go/fan-out/) · [Python](python/fan-out/) · [Node.js](node/fan-out/)
+- [**Singleton**](https://docs.openfaas.com/languages/patterns/singleton/) — [Go](go/singleton/) · [Python](python/singleton/)
 
 ## Prerequisites
 
@@ -27,19 +23,13 @@ cd go/director
 faas-cli up --tag=digest
 ```
 
-The examples use the public [ttl.sh](https://ttl.sh) registry so they can be
-pushed without credentials. Replace the prefix in `stack.yaml` with your own
-registry for anything you would not publish openly.
+`faas-cli up` builds each function image, pushes it to the registry, and
+deploys it to the gateway.
 
-## Examples
+The examples default to the public [ttl.sh](https://ttl.sh) registry so they
+can be pushed without credentials. The registry and owner are overridable
+through environment variables:
 
-| Directory | Pattern | Documentation |
-|---|---|---|
-| `go/director/` | Director: chains functions in a workflow | /languages/patterns/director/ |
-| `go/fan-out/` | Fan-out: submits one async invocation per record | /languages/patterns/fan-out/ |
-| `go/singleton/` | Singleton: broadcasts notifications from one replica | /languages/patterns/singleton/ |
-| `python/director/` | Director: chains functions in a workflow | /languages/patterns/director/ |
-| `python/fan-out/` | Fan-out: submits one async invocation per record | /languages/patterns/fan-out/ |
-| `python/singleton/` | Singleton: broadcasts notifications from one replica | /languages/patterns/singleton/ |
-| `node/director/` | Director: chains functions in a workflow | /languages/patterns/director/ |
-| `node/fan-out/` | Fan-out: submits one async invocation per record | /languages/patterns/fan-out/ |
+```bash
+REGISTRY=ghcr.io OWNER=welteki faas-cli up
+```

@@ -6,14 +6,14 @@ functions:
   fan-out:
     lang: python3-http
     handler: ./fan-out
-    image: ttl.sh/openfaas-examples/python-fan-out:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/python-fan-out:latest
     build_args:
       TEST_ENABLED: "true"
 
   url-check:
     lang: python3-http
     handler: ./url-check
-    image: ttl.sh/openfaas-examples/python-url-check:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/python-url-check:latest
     build_args:
       TEST_ENABLED: "true"
     environment:

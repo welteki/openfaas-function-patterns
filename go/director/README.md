@@ -14,8 +14,7 @@ telemetry-workflow ◄── director: owns the workflow and handles errors
     └── 3. combine results and return ok or alert
 ```
 
-Documentation page: `docs/languages/patterns/director.md` in the
-openfaas-docs repository.
+Documentation: [Director pattern](https://docs.openfaas.com/languages/patterns/director/)
 
 ## Build and deploy
 

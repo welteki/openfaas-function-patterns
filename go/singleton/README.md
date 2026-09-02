@@ -14,8 +14,7 @@ the function is restarted, rescheduled, or redeployed. To scale the hub across
 multiple replicas, replace the in-memory broadcast with an external message
 bus.
 
-Documentation page: `docs/languages/patterns/singleton.md` in the
-openfaas-docs repository.
+Documentation: [Singleton pattern](https://docs.openfaas.com/languages/patterns/singleton/)
 
 ## Build and deploy
 

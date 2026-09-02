@@ -4,8 +4,7 @@ The `fan-out` function accepts one trusted URL per line and submits each URL as
 an asynchronous invocation of the `url-check` function. It returns a summary
 immediately without waiting for the checks to complete.
 
-Documentation page: `docs/languages/patterns/fan-out.md` in the
-openfaas-docs repository.
+Documentation: [Fan-out pattern](https://docs.openfaas.com/languages/patterns/fan-out/)
 
 ## Build and deploy
 

@@ -6,7 +6,7 @@ functions:
   notification-hub:
     lang: golang-middleware
     handler: ./notification-hub
-    image: ttl.sh/openfaas-examples/notification-hub:latest
+    image: ${REGISTRY:-ttl.sh}/${OWNER:-openfaas-examples}/notification-hub:latest
     labels:
       com.openfaas.scale.min: "1"
       com.openfaas.scale.max: "1"
